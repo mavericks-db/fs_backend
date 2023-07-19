@@ -15,4 +15,10 @@ router.post("/createbook", async (req, res) => {
   res.json({ author: response.author, title: response.title });
 });
 
+// display books
+router.get("/list", async (req, res) => {
+  const response = await bookModel.find({});
+  res.json({ data: response });
+});
+
 module.exports = router;
