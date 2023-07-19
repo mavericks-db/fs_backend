@@ -12,7 +12,7 @@ router.post("/createbook", async (req, res) => {
     date: Date.now(),
   };
   const response = await bookModel.create(book);
-  res.send(response);
+  res.json({ author: response.author, title: response.title });
 });
 
 module.exports = router;
