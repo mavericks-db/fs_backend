@@ -14,6 +14,12 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get("/sampleapi", (req, res) => {
+  res.json({
+    hello: "Welcome to Expres and Netlify server",
+  });
+});
+
 // Use the router to handle requests to the `/.netlify/functions/api` path
 app.use(`/.netlify/functions/api`, router);
 
