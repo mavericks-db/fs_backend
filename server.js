@@ -1,4 +1,5 @@
 const express = require("express");
+const serverless = require("serverless-http");
 const cors = require("cors");
 require("dotenv").config();
 
@@ -27,3 +28,6 @@ server.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
   });
 });
+
+module.exports = server;
+module.exports.handler = serverless(server);
